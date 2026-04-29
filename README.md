@@ -1,33 +1,33 @@
-# Paywall Demo App
+# Демонстрационное приложение «Пэйволл»
 
-Flutter test app with onboarding, paywall, simulated purchase, and persisted
-subscription state.
+Демонстрационное тестовое приложение на фреймворке «Флаттер» с онбордингом, экраном пэйволла,
+симуляцией покупки и сохранением состояния подписки.
 
-## Features
+## Возможности
 
-- Onboarding flow (2 screens) with `Continue` button.
-- Paywall screen with two plans: monthly and yearly (yearly with discount label).
-- Simulated purchase flow: loading state (1 second) then success.
-- Main screen shown after purchase.
-- Persisted subscription using `SharedPreferences`.
-- Relaunch behavior: subscribed users open directly on the main screen.
+- Онбординг (2 экрана) с кнопкой `Continue`.
+- Экран пэйволла с двумя тарифами: помесячным и годовым (у годового указана скидка).
+- Симулированный сценарий покупки: состояние загрузки (1 секунда), затем успех.
+- Основной экран показывается после покупки.
+- Сохранение подписки с помощью `SharedPreferences`.
+- Поведение при перезапуске: пользователи с активной подпиской открывают главный экран напрямую.
 
-## Architecture
+## Архитектура
 
-Project follows a layered feature-first structure:
+Проект придерживается слоистой фиче-ориентированной структуры:
 
-- `presentation` for UI and widget interactions.
-- `application` for Cubits and immutable state.
-- `domain` for repository interfaces and use-cases.
-- `data` for persistence implementations and data sources.
+- `presentation` — для пользовательского интерфейса и взаимодействий виджетов.
+- `application` — для Cubit'ов и неизменяемого состояния.
+- `domain` — для интерфейсов репозиториев и use-case'ов.
+- `data` — для реализаций сохранения и источников данных.
 
-Main source-of-truth for subscription state:
+Основной источник истины для состояния подписки:
 
-- Domain interface: `SubscriptionRepository`.
-- Data implementation: `SubscriptionRepositoryImpl`.
-- Local storage adapter: `SubscriptionLocalDataSource`.
+- Интерфейс domain: `SubscriptionRepository`.
+- Реализация data: `SubscriptionRepositoryImpl`.
+- Адаптер локального хранилища: `SubscriptionLocalDataSource`.
 
-## Project Structure
+## Структура проекта
 
 ```text
 lib/
@@ -49,30 +49,30 @@ lib/
       data/{datasources,repositories}
 ```
 
-## State Management Notes
+## Заметки по управлению состоянием
 
-- `LaunchCubit`: app-start decision (`loading`, `subscribed`, `unsubscribed`, `failure`).
-- `OnboardingCubit`: onboarding progression with explicit immutable state.
-- `PaywallCubit`: plan selection + purchase states (`idle`, `loading`, `success`, `failure`).
+- `LaunchCubit`: решение при старте приложения (`loading`, `subscribed`, `unsubscribed`, `failure`).
+- `OnboardingCubit`: прогресс онбординга с явным неизменяемым состоянием.
+- `PaywallCubit`: выбор тарифа и состояния покупки (`idle`, `loading`, `success`, `failure`).
 
-## Quality
+## Качество
 
 - `dart format .`
 - `dart analyze`
-- Unit tests for critical logic:
-  - subscription status use-case
-  - paywall purchase state transitions
+- Юнит-тесты для критичной логики:
+  - проверка use-case'ом статуса подписки
+  - переходы состояний покупки на экран пэйволла
 
-## AI-Assisted Development (for screencast)
+## Разработка с помощью ИИ (для скринкаста)
 
-- Generate baseline feature scaffolding and repetitive boilerplate.
-- Refactor Cubits and state models for cleaner responsibilities.
-- Validate and fix analyzer/test failures quickly.
-- Speed up documentation and architecture outlining.
+- Быстро генерировать каркас фич и шаблонный повторяющийся код.
+- Рефакторить Cubits и модели состояния для более четкой ответственности.
+- Быстро проверять и устранять ошибки `analyzer`/тестов.
+- Ускорять подготовку документации и описаний архитектуры.
 
-## What I Would Improve With More Time
+## Что я бы улучшил при наличии времени
 
-- Add dependency injection container (`get_it` or similar) and explicit bindings.
-- Add richer error logging/telemetry abstraction in `core/`.
-- Add more unit tests and widget tests for navigation and UI behavior.
-- Improve paywall visuals and localization readiness.
+- Добавить контейнер внедрения зависимостей (например, `get_it` или аналог) и явные привязки.
+- Добавить более богатую абстракцию логирования ошибок/телеметрии в `core/`.
+- Добавить больше юнит-тестов и widget-тестов для навигации и поведения UI.
+- Улучшить визуальную часть пэйволла и подготовить локализацию.
