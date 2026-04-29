@@ -67,7 +67,7 @@ class PaywallCubit extends Cubit<PaywallState> {
       emit(
         state.copyWith(
           status: PaywallStatus.failure,
-          message: 'Purchase failed. Please try again.',
+          message: 'Покупка не удалась. Пожалуйста, попробуйте еще раз.',
         ),
       );
     }

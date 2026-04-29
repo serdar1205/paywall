@@ -17,8 +17,8 @@ class PlanCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isYearly = plan == SubscriptionPlan.yearly;
-    final title = isYearly ? 'Yearly' : 'Monthly';
-    final subtitle = isYearly ? '\$39.99/year (save 33%)' : '\$4.99/month';
+    final title = isYearly ? 'Годовой' : 'Месячный';
+    final subtitle = isYearly ? '39,99 \$/год (экономия 33%)' : '4,99 \$/мес';
 
     return Card(
       elevation: isSelected ? 2 : 0,

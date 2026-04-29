@@ -67,15 +67,15 @@ class _OnboardingViewState extends State<_OnboardingView> {
                         .onPageChanged,
                     children: const [
                       _OnboardingPage(
-                        title: 'Welcome',
+                        title: 'Добро пожаловать',
                         description:
-                            'Discover premium content with a simple subscription.',
+                            'Откройте премиум-контент с простой подпиской.',
                         icon: Icons.rocket_launch_outlined,
                       ),
                       _OnboardingPage(
-                        title: 'Stay Productive',
+                        title: 'Оставайтесь продуктивными',
                         description:
-                            'Unlock all features and keep your progress with premium access.',
+                            'Разблокируйте все функции и сохраняйте прогресс с премиум-доступом.',
                         icon: Icons.workspace_premium_outlined,
                       ),
                     ],
@@ -84,7 +84,7 @@ class _OnboardingViewState extends State<_OnboardingView> {
                 BlocBuilder<OnboardingCubit, OnboardingState>(
                   builder: (context, state) {
                     return PrimaryButton(
-                      label: 'Continue',
+                      label: 'Продолжить',
                       onPressed: context.read<OnboardingCubit>().continueFlow,
                       isLoading: false,
                     );

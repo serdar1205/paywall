@@ -45,7 +45,7 @@ class _PaywallView extends StatelessWidget {
         }
       },
       child: Scaffold(
-        appBar: AppBar(title: const Text('Upgrade to Premium')),
+        appBar: AppBar(title: const Text('Перейти на Премиум')),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(20),
@@ -53,12 +53,12 @@ class _PaywallView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Get unlimited access',
+                  'Получите неограниченный доступ',
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Choose a plan and continue to unlock all premium features.',
+                  'Выберите тариф и продолжайте, чтобы разблокировать все премиум-функции.',
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 const SizedBox(height: 20),
@@ -94,7 +94,7 @@ class _PaywallView extends StatelessWidget {
                 BlocBuilder<PaywallCubit, PaywallState>(
                   builder: (context, state) {
                     return PrimaryButton(
-                      label: 'Continue',
+                      label: 'Продолжить',
                       isLoading: state.status == PaywallStatus.loading,
                       onPressed: state.status == PaywallStatus.loading
                           ? null

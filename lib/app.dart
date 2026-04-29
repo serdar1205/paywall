@@ -46,7 +46,7 @@ class _PaywallAppState extends State<PaywallApp> {
         ),
       ],
       child: MaterialApp(
-        title: 'Paywall Demo',
+        title: 'Демо платного доступа',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
           useMaterial3: true,
@@ -84,7 +84,7 @@ class _LaunchGate extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(24),
                   child: Text(
-                    state.message ?? 'Could not load subscription status.',
+                    state.message ?? 'Не удалось загрузить статус подписки.',
                     textAlign: TextAlign.center,
                   ),
                 ),

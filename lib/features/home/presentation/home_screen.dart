@@ -6,23 +6,23 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const features = <String>[
-      'Ad-free experience',
-      'Unlimited content access',
-      'Priority updates',
+      'Без рекламы',
+      'Неограниченный доступ к контенту',
+      'Приоритетные обновления',
     ];
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      appBar: AppBar(title: const Text('Главная')),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
           Text(
-            'Premium unlocked',
+            'Премиум активирован',
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           const SizedBox(height: 10),
           Text(
-            'You now have access to all premium features.',
+            'Теперь у вас есть доступ ко всем премиум-функциям.',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
           const SizedBox(height: 20),

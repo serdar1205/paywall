@@ -47,7 +47,7 @@ class LaunchCubit extends Cubit<LaunchState> {
       emit(
         state.copyWith(
           status: LaunchStatus.failure,
-          message: 'Something went wrong. Please restart the app.',
+          message: 'Что-то пошло не так. Пожалуйста, перезапустите приложение.',
         ),
       );
     }
